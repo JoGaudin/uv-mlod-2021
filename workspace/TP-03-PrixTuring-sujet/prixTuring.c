@@ -78,13 +78,25 @@ void printWinners(Winner* winners, int nb_win){
 	}
 }
 
-int main(void)
+void infosAnnee(Winner* winners, int nb_win, int annee){
+	for(int i = 0; i < nb_win; i++){
+		if(winners[i].year == annee){
+			printf("L'annee %d, le(s) gagnant(s) ont été : ", winners[i].year);
+			printf("%s\n", winners[i].name);
+			printf("Nature des travaux : ");
+			printf("%s\n", winners[i].description);
+		}
+	}
+}
+
+int main(int argc, char *argv[])
 {
 
 	int nbGagnants = scanLineAsInt();
-	printf("nbGagnants = %i\n",nbGagnants);
+	printf("%i\n",nbGagnants);
 
 	printWinners(readWinners(nbGagnants), nbGagnants);
+	//infosAnnee(readWinners(nbGagnants), nbGagnants, atoi(argv[1]));
 
 	return EXIT_SUCCESS;
 }

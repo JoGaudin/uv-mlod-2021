@@ -83,10 +83,10 @@ int main(void) {
     //de(10);
 
     //Exercice 3
-    /*int N;
+    int N;
     printf("Veuillez saisir un nombre\n");
     scanf("%d", &N);
-    read(N);*/
+    read(N);
     
 
     //Exercice 4
