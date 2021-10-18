@@ -1,7 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <stdbool.h>
+
+
+#include "matrix.h"
 
 typedef struct Matrix
 {
@@ -41,8 +43,11 @@ MatrixArray* readMatrixArray(int nb_mat){
 	
 }
 
-void printMatrixArray(){
-	
+void printMatrixArray(MatrixArray* tab_mat, int nb_mat){
+
+	for(int i = 0; i < nb_mat; i++){
+
+	}
 }
 
 int nombre_matrices(){
