@@ -14,41 +14,43 @@ typedef struct Matrix
 
 typedef struct MatrixArray
 {
+	int nombre_matrice;
 	Matrix* matrices;
 } MatrixArray;
 
 Matrix readMatrix(){
-    Matrix mat;
-	mat = (Matrix)malloc(sizeof(Matrix));
+    Matrix *mat;
+	mat = (Matrix*)malloc(sizeof(Matrix));
 
-	scanf("%i %i", &mat.nb_lignes, &mat.nb_colonnes);
-
+	scanf("%i %i", &mat->nb_lignes, &mat->nb_colonnes);
 	
-	for(int i = 0; i < mat.nb_lignes; i++){
-		for(int j = 0; j < mat.nb_colonnes; j++){
-			scanf("%i", &mat.values[i][j]);
+
+	for(int i = 0; i < mat->nb_lignes; i++){
+		for(int j = 0; j < mat->nb_colonnes; j++){
+			scanf("%i ", &mat->values[i][j]);
 		}	
 	}
 
 	return mat;
 }
 
-MatrixArray* readMatrixArray(int nb_mat){
+/*MatrixArray* readMatrixArray(int nb_mat){
 	MatrixArray* tab_mat;
-	tab_mat = (MatrixArray*)malloc(nb_mat*sizeof(MatrixArray));
+	tab_mat->nombre_matrice = nb_mat;
+	tab_mat = calloc(nb_mat*,sizeof(MatrixArray));
 
 	for(int i = 0; i < nb_mat; i++){
 		tab_mat->matrices[i] = readMatrix();
 	}
 	
-}
+}*/
 
-void printMatrixArray(MatrixArray* tab_mat, int nb_mat){
+/*void printMatrixArray(MatrixArray* tab_mat, int nb_mat){
 
-	for(int i = 0; i < nb_mat; i++){
+	
+}*/
 
-	}
-}
+
 
 int nombre_matrices(){
 	int buffer;
